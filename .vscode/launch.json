@@ -9,9 +9,10 @@
             "type": "coreclr",
             "request": "launch",
             "preLaunchTask": "build",
-            "program": "${workspaceFolder}/bin/Debug/net7.0/template.dll",
+            "program": "${workspaceFolder}/bin/Debug/net8.0/tl1-tp6-2024-nachoNota.dll",
             "args": [],
             "cwd": "${workspaceFolder}",
+            "console": "integratedTerminal",
             "stopAtEntry": false,
             "serverReadyAction": {
                 "action": "openExternally",
