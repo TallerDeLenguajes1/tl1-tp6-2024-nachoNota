@@ -1,23 +1,43 @@
-﻿// See https://aka.ms/new-console-template for more information
-using System.ComponentModel;
+﻿using System;
+using System.Runtime.Intrinsics.Arm;
+int seguir;
+float resultado = 0;
+do
+{
 
-Console.WriteLine("Hello, World!");
+    System.Console.WriteLine("Valor 1: ");
+    int a = int.Parse(Console.ReadLine());
+    System.Console.WriteLine("Valor 2: ");
+    int b = int.Parse(Console.ReadLine());
 
-int a;
-int b;
-a = 10;
-b = a;
+    System.Console.WriteLine("1- Suma: ");
+    System.Console.WriteLine("2- Resta: ");
+    System.Console.WriteLine("3- Multiplicacion: ");
+    System.Console.WriteLine("4- Division: ");
+    System.Console.WriteLine("Opcion: ");
+    int Opcion = int.Parse(Console.ReadLine());
 
-Console.WriteLine($"valor de a: {a}");
-Console.WriteLine($"valor de b: {b}");
+    switch (Opcion)
+    {
+        case 1: resultado = a + b;
+            break;
+        case 2: resultado = a - b;
+            break;
+        case 3: resultado = a * b;
+            break;
+        case 4: if(b == 0){
+                    System.Console.WriteLine("La division no se puede realizar");
+                } else {
+                    resultado = (float)a / b;
+                }
 
-Console.WriteLine("Ingrese un valor: ");
-int numero = int.Parse(Console.ReadLine());    
-int invertido = 0;
-while (numero != 0){
-    int ultimo = numero % 10;
-    invertido = invertido * 10 + ultimo;
-    numero = numero / 10;
-}
+            break;
+        default: System.Console.WriteLine("Opcion ingresada no valida");
+            break;
+    }
 
-Console.WriteLine($"invertido: {invertido}");
+    System.Console.WriteLine($"Resultado: {resultado}");
+
+    System.Console.WriteLine("Seguir ingresando? 1=Si, 0=No");
+    seguir = int.Parse(Console.ReadLine());
+} while (seguir == 1);
